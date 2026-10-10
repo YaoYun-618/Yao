@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>RingDesk</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+    #ring { position: fixed; inset: 0; pointer-events: none; }
+    .ring-wrapper { border-radius: 50%; overflow: hidden; }
+    .icons-layer { position: absolute; inset: 0; pointer-events: none; }
+    .app-icon {
+      position: absolute; pointer-events: auto; background: rgba(120,150,255,.12);
+      border: 1px solid var(--panel-border, rgba(120,150,255,.35)); border-radius: 18%;
+      backdrop-filter: blur(6px); display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 4px; color: var(--text, #e8ecf8); font-size: 12px; cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .app-icon img { width: 60%; height: 60%; object-fit: contain; border-radius: 16%; }
+    .app-icon:hover { transform: scale(1.12); box-shadow: 0 0 14px var(--glow, rgba(120,150,255,.55)); }
+    .app-icon.match { outline: 2px solid #ffd166; box-shadow: 0 0 18px #ffd166; transform: scale(1.18); }
+    .sector-label { fill: var(--text, #e8ecf8); font-size: 15px; text-anchor: middle; }
+    .center-console { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      text-align: center; width: 260px; pointer-events: auto; }
+    .center-console input {
+      width: 100%; padding: 10px 14px; border-radius: 999px; border: 1px solid var(--panel-border);
+      background: var(--panel-base); color: var(--text); outline: none; font-size: 14px;
+      backdrop-filter: blur(10px);
+    }
+    .pinned-slots { display: flex; gap: 8px; justify-content: center; margin-top: 12px; }
+    .pinned-slot {
+      width: 44px; height: 44px; border-radius: 16%; border: 1px solid var(--panel-border);
+      background: var(--panel-base); color: var(--text); font-size: 11px; cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body>
+  <div id="ring"></div>
+  <script src="./main.js"></script>
+</body>
+</html>
