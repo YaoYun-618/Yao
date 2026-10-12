@@ -4,7 +4,7 @@
   "description": "Windows 环状桌面美化应用",
   "main": "dist/main/index.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && node scripts/copy-assets.js",
     "start": "npm run build && electron .",
     "test": "vitest run",
     "test:watch": "vitest",
